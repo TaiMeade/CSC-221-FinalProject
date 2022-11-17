@@ -35,12 +35,6 @@ if option == "Home":
 
     with col1:
 
-        # For formatting
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-
         # Dashboard Title
         st.write("---")
         st.title("The Odyssey - Coding Edition")
@@ -51,7 +45,7 @@ if option == "Home":
 
         # Goal for website...outside of columns
         st.subheader("**Goal:**")
-        st.markdown("This is Tai Meade's final project for CSC 221.  It will consist of multiple programs separated into different sections.  The goal of this website is to showcase my skills as a programmer while remaining as user-friendly as possible.")
+        st.markdown("This is my (Tai Meade's) final project for CSC 221.  It will consist of multiple programs separated into different sections.  The goal of this website is to showcase my skills as a programmer while remaining as user-friendly as possible.")
         st.markdown("---")
 
     # Formatting to move image to right side next to title
@@ -92,6 +86,8 @@ if option == "Home":
         st.write("")
         st.image(image="binaryCodePic.png")
         ''')
+
+
 
 #-----------------------------------------------Password Generator Page----------------------------------------------
 elif option == "Password Generator":
@@ -364,95 +360,121 @@ elif option == "Rock Paper Scissors":
 
     st.write("---")
 
-    if difficulty == 'Normal':
-        
-        userInput = st.text_input("Choose (rock, paper, or scissors): ")
+    col1,col2,col3 = st.columns([1,2,1])
 
-        outcome = rPS.rockPaperScissors(userInput)
-        
-        st.write("---")
-        st.header(f"{outcome}")
-        st.write("---")
-        if outcome == "YOU LOSE!":
-            st.markdown(
-                """
-                <style>
-                .css-k1vhr4 {
-                    background-color: #530000;
-                    text-align: center;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-        if outcome == "YOU WIN!":
-            st.markdown(
-                """
-                <style>
-                .css-k1vhr4 {
-                    background-color: #1c0642;
-                    text-align: center;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-        if outcome == "YOU TIE!":
-            st.markdown(
-                """
-                <style>
-                .css-k1vhr4 {
-                    text-align: center;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
+    with col2:
+        if difficulty == 'Normal':
+            
+            userInput = st.text_input("Choose (rock, paper, or scissors): ")
+            
+            outcome, computerDecision = rPS.rockPaperScissors(userInput)
+            
+            st.write("---")
+            st.header(f"{outcome}")
+            st.write("---")
+            if outcome == "YOU LOSE!":
+                st.markdown(
+                    """
+                    <style>
+                    .css-k1vhr4 {
+                        background-color: #530000;
+                        text-align: center;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
+            if outcome == "YOU WIN!":
+                st.markdown(
+                    """
+                    <style>
+                    .css-k1vhr4 {
+                        background-color: #1c0642;
+                        text-align: center;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
+            if outcome == "YOU TIE!":
+                st.markdown(
+                    """
+                    <style>
+                    .css-k1vhr4 {
+                        text-align: center;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
 
-    elif difficulty == 'Impossible':
-        userInput = st.text_input("Choose (rock, paper, or scissors): ")
+        elif difficulty == 'Impossible':
+            userInput = st.text_input("Choose (rock, paper, or scissors): ")
 
-        outcome = rPS.rockPaperScissorsImpossibleMode(userInput)
-        
-        st.write("---")
-        st.header(f"{outcome}")
-        st.write("---")
-        if outcome == "YOU LOSE!":
-            st.markdown(
-                """
-                <style>
-                .css-k1vhr4 {
-                    background-color: #530000;
-                    text-align: center;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-        if outcome == "YOU WIN!":
-            st.markdown(
-                """
-                <style>
-                .css-k1vhr4 {
-                    background-color: #1c0642;
-                    text-align: center;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-        if outcome == "YOU TIE!":
-            st.markdown(
-                """
-                <style>
-                .css-k1vhr4 {
-                    text-align: center;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
+            computerDecision = ""
 
+            outcome, computerDecision = rPS.rockPaperScissorsImpossibleMode(userInput)
+            
+            st.write("---")
+            st.header(f"{outcome}")
+            st.write("---")
+            if outcome == "YOU LOSE!":
+                st.markdown(
+                    """
+                    <style>
+                    .css-k1vhr4 {
+                        background-color: #530000;
+                        text-align: center;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
+            if outcome == "YOU WIN!":
+                st.markdown(
+                    """
+                    <style>
+                    .css-k1vhr4 {
+                        background-color: #1c0642;
+                        text-align: center;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
+            if outcome == "YOU TIE!":
+                st.markdown(
+                    """
+                    <style>
+                    .css-k1vhr4 {
+                        text-align: center;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+    with col1:
+        if userInput != "" and outcome != "I'm sorry, but that is not a valid input!":
+            st.subheader("User Decision:")
+            if userInput == "scissors":
+                st.image("scissors.png")
+            elif userInput == "rock":
+                st.image("rock.png")
+            elif userInput == "paper":
+                st.image("paper.png")
+    
+    with col3:
+        if userInput != "" and outcome != "I'm sorry, but that is not a valid input!":
+            st.subheader("Computer Decision:")
+            if computerDecision == "scissors":
+                st.image("scissors.png")
+            elif computerDecision == "rock":
+                st.image("rock.png")
+            elif computerDecision == "paper":
+                st.image("paper.png")
+                
+    st.write("---")
     # Expander showcasing code for this program/function...SHOUTOUT TO JACOB ALTIZER FOR THIS AMAZING IDEA
     with st.expander("Code (not all code for 'streamlitifying' it):"):
         st.code("""'''

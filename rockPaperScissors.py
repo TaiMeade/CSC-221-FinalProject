@@ -14,7 +14,7 @@ def rockPaperScissors(userInput):
     # Helps prevent errors from being made based on user's input format
     userInput = userInput.lower().strip()
     
-    # Generate decision for AI/computer
+    # Generate decision for AI/computer...looking back I wish I had used random.choice()
     computerDecisionIndex = random.randint(1,3)
     if computerDecisionIndex == 1:
         computerDecision = 'rock'
@@ -46,7 +46,7 @@ def rockPaperScissors(userInput):
         outcome = ""
     else:
         outcome = "I'm sorry, but that is not a valid input!"
-    return outcome
+    return outcome, computerDecision
 
 # for testing
 #rockPaperScissors(userInput=input("Please enter your choice of rock, paper, or scissors: "))
@@ -65,12 +65,13 @@ def rockPaperScissorsImpossibleMode(userInput):
         computerDecision = 'rock'
     else:
         outcome = "That is not a valid input"
+        computerDecision = ""
 
     # Logic deciding winner (although it will/SHOULD always be the computer)
     if userInput == 'rock' and computerDecision == 'rock':
         outcome = "YOU TIE!"
     elif userInput == 'rock' and computerDecision == 'paper':
-        outcome = f"YOU LOSE!"
+        outcome = "YOU LOSE!"
     elif userInput == 'rock' and computerDecision == 'scissors':
         outcome = "YOU WIN!"
     elif userInput == 'paper' and computerDecision == 'rock':
@@ -89,6 +90,7 @@ def rockPaperScissorsImpossibleMode(userInput):
         outcome = ""
     else:
         outcome = "I'm sorry, but that is not a valid input!"
-    return outcome
+    
+    return outcome, computerDecision
 
 
