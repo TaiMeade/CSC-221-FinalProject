@@ -86,23 +86,28 @@ def main():
             #st.write(e)
 
     with col3:
-        # Area where user enters their comma separated list of entries for the madLib
-        userDecisions = st.text_input("Separated choices (EX: orange, blue, red, yellow, etc.): ")
 
-        #userDecisions = userDecisions.split()
+        try:
+            # Area where user enters their comma separated list of entries for the madLib
+            userDecisions = st.text_input("Separated choices (EX: orange, blue, red, yellow, etc.): ")
 
-        if userDecisions != "":
+            #userDecisions = userDecisions.split()
 
-            userDecisions = userDecisions.split(", ")
+            if userDecisions != "":
 
-            # Without this line the last portion of the MadLib is not printed to the screen
-            helpWithFormatting = ""
-            userDecisions.append(helpWithFormatting)   
+                userDecisions = userDecisions.split(", ")
 
-            finalMadLib = mL.putTogetherStory(restOfStory, userDecisions)
+                # Without this line the last portion of the MadLib is not printed to the screen
+                helpWithFormatting = ""
+                userDecisions.append(helpWithFormatting)   
 
-            st.markdown("Here is the MadLib you created: ")
-            st.markdown(finalMadLib)
+                finalMadLib = mL.putTogetherStory(restOfStory, userDecisions)
+
+                st.markdown("Here is the MadLib you created: ")
+                st.markdown(finalMadLib)
+            
+        except Exception as e:
+            st.write(f"You have more than {len(blanks)} blanks!")
 
     st.write("---")
 
