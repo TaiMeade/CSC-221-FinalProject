@@ -44,7 +44,7 @@ if option == "Home":
         st.write("---")
 
         # Goal for website...outside of columns
-        st.subheader("**Goal:**")
+        st.subheader("**Summary:**")
         st.markdown("This is my (Tai Meade's) final project for CSC 221.  It will consist of multiple programs separated into different sections.  The goal of this website is to showcase my skills as a programmer while remaining as user-friendly as possible.")
         st.markdown("---")
 
