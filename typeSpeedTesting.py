@@ -39,7 +39,7 @@ def getThingToType():
                                     "These sentences are getting dumber by the minute. Thank you for playing my TypeSpeedTester though!",
                                     "Sometimes you need to be tested so good luck typing supercalifragilisticexpialidocious quickly and accurately!",
                                     "This sentence is going to be extremely long because I feel that your words per minute have been inflated, and along with them, your confidence. You must be reminded that typing is not meant to be fun or easy.",
-                                    "Beach-combing replaced wine tasting as his new obsession. Thigh-high in the water, the fisherman’s hope for dinner soon turned to despair.",
+                                    "Beach-combing replaced wine tasting as his new obsession. Thigh-high in the water, the fisherman's hope for dinner soon turned to despair.",
                                     "While all her friends were positive that Mary had a sixth sense, she knew she actually had a seventh sense.",
                                     "Giving directions that the mountains are to the west only works when you can see them.",
                                     "If eating three-egg omelets causes weight-gain, budgie eggs are a good substitute.",
