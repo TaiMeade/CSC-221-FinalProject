@@ -14,11 +14,12 @@ import typeSpeedTesting as tST
 import random
 import streamlit as st
 import requests
+import images
 
 
 # Global code for webpage
 # Sets page config
-st.set_page_config(page_title="The Odyssey - Coding Edition", page_icon="binaryCodePic.png", layout='wide')
+st.set_page_config("The Odyssey - Coding Edition", "images/binaryCodePic.png", 'wide')
 
 # Sidebar Title
 st.sidebar.title("Options:")
@@ -48,10 +49,16 @@ if option == "Home":
         st.markdown("This is my (Tai Meade's) final project for CSC 221.  It will consist of multiple programs separated into different sections.  The goal of this website is to showcase my skills as a programmer while remaining as user-friendly as possible.")
         st.markdown("---")
 
+        # Other notes
+        st.subheader("Notes:")
+        st.markdown("* Not all code expanders are exact/up to date.")
+        st.write("---")
+
     # Formatting to move image to right side next to title
     with col2:
         st.write("")
-        st.image(image="binaryCodePic.png")
+        st.write("")
+        st.image(image="images/binaryCodePic.png")
 
     with st.expander("Code for Home Page:"):
         st.code('''#------------------------------------------------------Home Page-----------------------------------------------------
@@ -84,7 +91,7 @@ if option == "Home":
     # Formatting to move image to right side next to title
     with col2:
         st.write("")
-        st.image(image="binaryCodePic.png")
+        st.image(image="images/binaryCodePic.png")
         ''')
 
 
@@ -458,21 +465,21 @@ elif option == "Rock Paper Scissors":
         if userInput != "" and outcome != "I'm sorry, but that is not a valid input!":
             st.subheader("User Decision:")
             if userInput == "scissors":
-                st.image("scissors.png")
+                st.image("images/scissors.png")
             elif userInput == "rock":
-                st.image("rock.png")
+                st.image("images/rock.png")
             elif userInput == "paper":
-                st.image("paper.png")
+                st.image("images/paper.png")
     
     with col3:
         if userInput != "" and outcome != "I'm sorry, but that is not a valid input!":
             st.subheader("Computer Decision:")
             if computerDecision == "scissors":
-                st.image("scissors.png")
+                st.image("images/scissors.png")
             elif computerDecision == "rock":
-                st.image("rock.png")
+                st.image("images/rock.png")
             elif computerDecision == "paper":
-                st.image("paper.png")
+                st.image("images/paper.png")
                 
     st.write("---")
     # Expander showcasing code for this program/function...SHOUTOUT TO JACOB ALTIZER FOR THIS AMAZING IDEA
