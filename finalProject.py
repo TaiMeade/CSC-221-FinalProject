@@ -11,6 +11,8 @@ import madLibStreamlit as mL
 import passwordGenerator as pG
 import rockPaperScissors as rPS
 import typeSpeedTesting as tST
+import extremeRPS
+import RPS101
 import random
 import streamlit as st
 import requests
@@ -25,7 +27,7 @@ st.set_page_config("The Odyssey - Coding Edition", "images/binaryCodePic.png", '
 st.sidebar.title("Options:")
 
 # Sidebar Dropdown
-option = st.sidebar.selectbox("Select Page:", ("Home", "Password Generator", "Message Encrypter/Decrypter", "Rock Paper Scissors", "MadLib Generator", "TypeSpeedTester"))
+option = st.sidebar.selectbox("Select Page:", ("Home", "Password Generator", "Message Encrypter/Decrypter", "Rock Paper Scissors", "Extreme RPS", "MadLib Generator", "TypeSpeedTester"))
 
 
 #------------------------------------------------------Home Page-----------------------------------------------------
@@ -577,6 +579,27 @@ def rockPaperScissorsImpossibleMode(userInput):
         outcome = "I'm sorry, but that is not a valid input!"
     return outcome
         """)
+
+
+
+#-----------------------------------------------------Extreme RPS----------------------------------------------------
+elif option == "Extreme RPS":
+
+    st.title("PART OF MY CODEJAM SUBMISSION...thought I'd include it...")
+
+    version = st.sidebar.selectbox("Version:", ['RPS 25','RPS 101'])
+
+    if version == 'RPS 25':
+
+        extremeRPS.main()
+
+    elif version == 'RPS 101':
+
+        RPS101.main()
+    
+    else:
+
+        st.subheader("Invalid Version")
 
 
 
